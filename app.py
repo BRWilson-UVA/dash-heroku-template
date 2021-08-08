@@ -1,7 +1,3 @@
-#import plotly renderer for viewing web interactive charts
-import plotly.io as pio
-pio.renderers.default = 'iframe' # or 'notebook' or 'colab'
-
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
