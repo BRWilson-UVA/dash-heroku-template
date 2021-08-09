@@ -1,4 +1,5 @@
-pip install git+git://github.com/BRWilson-UVA/dash-heroku-template/blob/master/requirements.txt
+$ python --version
+Python 3.9.6
 
 import numpy as np
 import pandas as pd
