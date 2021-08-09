@@ -1,3 +1,4 @@
+git+git://github.com/BRWilson-UVA/dash-heroku-template/blob/master/requirements.txt
 pip install -r requirements.txt
 
 import numpy as np
