@@ -1,11 +1,17 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Aug  9 07:53:08 2021
+
+@author: Ben_Wilson_DS_Accoun
+"""
+
 import numpy as np
 import pandas as pd
-import plotly.graph_objects as go
 import plotly.express as px
 import plotly.graph_objects as go
 import plotly.figure_factory as ff
+
 import dash
-from jupyter_dash import JupyterDash
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
@@ -39,11 +45,8 @@ gss_clean.age = gss_clean.age.astype('float')
 
 markdown_text = '''
 The [General Social Survey] (http://www.gss.norc.org/About-The-GSS) (GSS) is a national survey conducted across the USA since 1972 focusing on data collection to enhance our understanding of opinions as they manifest into behaviors. To support our understanding of the survey, the following dashboard has been developed which focused on key issues surrounding the gender wage gap domestically. 
-
 According to the [US Department of Labor] (https://blog.dol.gov/2021/03/19/5-facts-about-the-state-of-the-gender-pay-gap), women earn 82 cents for every dollar earned by men (other reports have it closer to 84). This issue extrapolates beyond women’s working years as well, impacting their benefits such as Social Security during retirement given that less earnings earlier in life equates to lower benefits upon retirement. Although progress has been made in comparison to the 70’s when the GSS survey started (women were at 57 cents for every dollar earned by men), events such as the pandemic have stalled the progress toward equality. When factoring race and holding all else equal (i.e. education and years of experience), the gap widens further to 65% for Black and Latina women.
-
 As noted by [Pew Research Center] (https://www.pewresearch.org/fact-tank/2021/05/25/gender-pay-gap-facts/), this wage gap of 16-18 cents in median earnings equates to an additional ~42 days of work annually for women in order to be equal to men. The age gap is improving when factoring in age as for women 25-35, a gap of 93 cents exists showing progress through generations. Similar PEW Research has identified 40% of women experienced gender discrimination, a hypothesized key contributor to the ongoing issue.
-
 '''
 
 #create table display
@@ -121,8 +124,7 @@ fig_box_6 = px.box(gss_clean_df, x='sex', y='job_prestige', facet_col='jp_cat', 
 fig_box_6.update(layout=dict(title=dict(x=0.5)))
 fig_box_6.update_layout(showlegend=False)
 
-app = JupyterDash(__name__, external_stylesheets=external_stylesheets)
-
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 
 app.layout = html.Div(
