@@ -1,5 +1,3 @@
-python-3.8.5
-
 import numpy as np
 import pandas as pd
 import plotly.express as px
