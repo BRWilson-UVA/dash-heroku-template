@@ -1,5 +1,3 @@
-pip install -r requirements.txt
-
 import numpy as np
 import pandas as pd
 import plotly.express as px
@@ -163,4 +161,4 @@ app.layout = html.Div(
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True, port=8051, host='0.0.0.0')
+    app.run_server(debug=True, host='0.0.0.0')
